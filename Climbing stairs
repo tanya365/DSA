@@ -1,0 +1,24 @@
+//exceeds time limit
+int climbStairs(int n) { 
+    int result;
+    if(n==1||n==2)
+    return n;
+    else{
+        result=climbStairs(n-1)+climbStairs(n-2);
+    }
+    return result;
+}
+
+//second attempt
+int memo[46]; 
+int climbStairs(int n) {
+    int result;
+    if (n == 1 || n == 2)
+        return n;
+    if (memo[n] != 0)          
+        return memo[n];
+    else {
+        result = climbStairs(n-1) + climbStairs(n-2);
+    }
+    memo[n] = result;           
+    return result;
